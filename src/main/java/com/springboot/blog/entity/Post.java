@@ -27,4 +27,8 @@ public class Post {
             //cascadeztype.all whenever we changed the parent child class also will be saved
     //orphanRemoval = true whenever we remove parent class child class also will be removed
     private Set<Comment> comments = new HashSet<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private Category category;
 }
